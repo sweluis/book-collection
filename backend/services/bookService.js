@@ -17,7 +17,6 @@ async function createNewTable() {
   }
 }
 
-
 export async function getAllBooksFromDB() {
   try {
     const query = `
@@ -92,4 +91,3 @@ export async function deleteBookInDB(bookName) {
     console.error('Error:', err);
   }
 }
-

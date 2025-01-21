@@ -3,11 +3,11 @@ import { getBookCollection, getBookCollectionByRating, getBookCollectionByReadSt
 
 const bookRouter = express.Router();
 
-bookRouter.get('/getcollection', getBookCollection);
+bookRouter.get('/collection', getBookCollection);
 
-bookRouter.get('/getcollection/rating/:order', getBookCollectionByRating);
+bookRouter.get('/collection/rating/:order', getBookCollectionByRating);
 
-bookRouter.get('/getcollection/read/:status', getBookCollectionByReadStatus);
+bookRouter.get('/collection/read/:status', getBookCollectionByReadStatus);
 
 bookRouter.post('/addbook', addNewBook);
 
