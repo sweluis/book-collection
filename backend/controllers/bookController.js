@@ -1,5 +1,6 @@
 import { getAllBooksFromDB, getBooksByRatingFromDB, getBooksByReadStatusFromDB, addNewBookInDB, updateReadStatusInDB, deleteBookInDB } from "../services/bookService.js";
 
+// Method to get all books from the database
 export const getBookCollection = async (req, res, next) => {
     try {
         const allBooks = await getAllBooksFromDB();
@@ -11,6 +12,7 @@ export const getBookCollection = async (req, res, next) => {
       }
 }
 
+// Method to get all books from the database, sorted by high to low or vice versa, based on parameter passed
 export const getBookCollectionByRating = async (req, res, next) => {
     try {
         let { order } = req.params;
@@ -24,6 +26,7 @@ export const getBookCollectionByRating = async (req, res, next) => {
     }
 }
 
+// Method to get all books from the database, based on read status, controlled by parameter passed
 export const getBookCollectionByReadStatus = async (req, res, next) => {
   try {
       let { status } = req.params;
@@ -37,6 +40,7 @@ export const getBookCollectionByReadStatus = async (req, res, next) => {
   }
 }
 
+// Method to add a new book to the database
 export const addNewBook = async (req, res, next) => {
   try {
     const { title, rating } = req.body;
@@ -51,6 +55,7 @@ export const addNewBook = async (req, res, next) => {
   }
 }
 
+// Method to update the read status of a book in the database
 export const updateReadStatus = async (req, res, next) => {
   try {
     const { title } = req.body;
@@ -65,6 +70,7 @@ export const updateReadStatus = async (req, res, next) => {
   }
 }
 
+// Method to delete a book from the database
 export const deleteBook = async (req, res, next) => {
   try {
     const { title } = req.body;
